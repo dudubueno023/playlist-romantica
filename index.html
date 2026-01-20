@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minha Playlist 💚</title>
+
+<style>
+body {
+    margin: 0;
+    background: linear-gradient(180deg, #1db954, #121212 45%);
+    font-family: "Helvetica", Arial, sans-serif;
+    color: white;
+}
+
+.container {
+    max-width: 420px;
+    margin: auto;
+    padding: 20px;
+}
+
+.cover {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
+.title {
+    margin-top: 20px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.subtitle {
+    color: #dcdcdc;
+    margin-top: 6px;
+    font-size: 14px;
+}
+
+.play-area {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+.heart {
+    font-size: 22px;
+    color: #1db954;
+}
+
+.play-btn {
+    background-color: #1db954;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+.play-btn:active {
+    transform: scale(0.95);
+}
+
+.text {
+    margin-top: 30px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #e6e6e6;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <img src="foto.jpg" alt="Foto dela" class="cover">
+
+    <div class="title">Minha Playlist Favorita</div>
+    <div class="subtitle">Feita especialmente para você 💚</div>
+
+    <div class="play-area">
+        <span class="heart">💚</span>
+
+        <audio id="musica">
+            <source src="musica.mp3" type="audio/mpeg">
+        </audio>
+
+        <button class="play-btn" onclick="togglePlay()">▶</button>
+    </div>
+
+    <div class="text">
+        Cada vez que essa música toca, eu lembro do seu sorriso,  
+        do seu jeito, e do quanto você faz meus dias melhores.  
+        Essa playlist não está no Spotify…  
+        porque ela só existe pra você 💚
+    </div>
+
+</div>
+
+<script>
+function togglePlay() {
+    const musica = document.getElementById("musica");
+    const botao = document.querySelector(".play-btn");
+
+    if (musica.paused) {
+        musica.play();
+        botao.innerHTML = "⏸";
+    } else {
+        musica.pause();
+        botao.innerHTML = "▶";
+    }
+}
+</script>
+
+</body>
+</html>
